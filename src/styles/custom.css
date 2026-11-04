@@ -107,9 +107,59 @@ h4,
 /* ───────── Home: hero ───────── */
 [data-has-hero] .hero h1 {
   font-size: clamp(2.2rem, 5vw, 3.6rem);
-  line-height: 1.04;
-  letter-spacing: -0.03em;
-  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+/* O campo de pontos: uma frota de dispositivos varrida por uma onda de luz (o mesmo da página pessoal). */
+[data-has-hero] .hero {
+  position: relative;
+  isolation: isolate;
+}
+
+[data-has-hero] .hero::before,
+[data-has-hero] .hero::after {
+  content: '';
+  position: absolute;
+  inset: -3rem -1rem 0;
+  z-index: -1;
+  pointer-events: none;
+  background-size: 26px 26px;
+}
+
+[data-has-hero] .hero::before {
+  background-image: radial-gradient(circle, var(--sl-color-gray-5) 1.3px, transparent 1.8px);
+  -webkit-mask-image: radial-gradient(ellipse 80% 90% at 70% 40%, #000 0%, transparent 78%);
+  mask-image: radial-gradient(ellipse 80% 90% at 70% 40%, #000 0%, transparent 78%);
+}
+
+[data-has-hero] .hero::after {
+  background-image: radial-gradient(circle, var(--sl-color-accent) 1.6px, transparent 2.2px);
+  -webkit-mask-image: linear-gradient(100deg, transparent 0%, #000 50%, transparent 100%);
+  mask-image: linear-gradient(100deg, transparent 0%, #000 50%, transparent 100%);
+  -webkit-mask-size: 45% 100%;
+  mask-size: 45% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 78% 0;
+  mask-position: 78% 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-has-hero] .hero::after {
+    animation: varredura 11s ease-in-out infinite;
+  }
+  @keyframes varredura {
+    from {
+      -webkit-mask-position: -100% 0;
+      mask-position: -100% 0;
+    }
+    to {
+      -webkit-mask-position: 200% 0;
+      mask-position: 200% 0;
+    }
+  }
 }
 
 [data-has-hero] .hero .tagline {

@@ -14,7 +14,7 @@ const svg = `
   <text x="112" y="396" font-family="sans-serif" font-size="82" font-weight="700" fill="#f3f6fa">para Apple, na prática</text>
   <text x="112" y="480" font-family="sans-serif" font-size="32" fill="#b4c0ce">MDM, Jamf Pro, IaC e DEX em português</text>
   <circle cx="1068" cy="516" r="22" fill="#f2b233"/>
-  <text x="112" y="548" font-family="sans-serif" font-size="28" fill="#8493a6">Deivid Santos</text>
+  <text x="112" y="548" font-family="sans-serif" font-size="28" fill="#8493a6">Deívid Santos</text>
 </svg>`;
 
 await sharp(Buffer.from(svg)).png().toFile(saida);

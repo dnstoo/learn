@@ -1,4 +1,4 @@
-# Aprenda Modern Workplace
+# Modern Workplace na prática
 
 Site de tutoriais em português sobre MDM, Jamf Pro, infraestrutura como código e DEX para frotas Apple corporativas. Publicado em https://blog.deividsantos.com.br
 

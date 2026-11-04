@@ -20,7 +20,7 @@ const DESCRICAO =
 const autor = {
   '@type': 'Person',
   '@id': `${SITE_PESSOAL}/#deivid`,
-  name: 'Deivid Santos',
+  name: 'Deívid Santos',
   url: SITE_PESSOAL,
   jobTitle: 'Especialista em Modern Workplace e gestão de dispositivos Apple',
   knowsAbout: [
@@ -73,7 +73,7 @@ export default defineConfig({
         ? { editLink: { baseUrl: `https://github.com/${GITHUB_USER}/${GITHUB_REPO}/edit/main/` } }
         : {}),
       head: [
-        { tag: 'meta', attrs: { name: 'author', content: 'Deivid Santos' } },
+        { tag: 'meta', attrs: { name: 'author', content: 'Deívid Santos' } },
         { tag: 'meta', attrs: { property: 'og:locale', content: 'pt_BR' } },
         { tag: 'meta', attrs: { property: 'og:image', content: `${SITE}/og.png` } },
         { tag: 'meta', attrs: { property: 'og:image:width', content: '1200' } },
