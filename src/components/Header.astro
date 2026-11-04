@@ -1,0 +1,95 @@
+---
+import Search from '@astrojs/starlight/components/Search.astro';
+import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro';
+
+// Mesma barra do site principal: marca, links de seção, ação de LinkedIn.
+const links = [
+  { texto: 'Posts', href: '/#posts-recentes' },
+  { texto: 'Série', href: '/curso-mdm-como-codigo/' },
+  { texto: 'Sobre', href: '/sobre/' },
+  { texto: 'Site', href: 'https://deividsantos.com.br' },
+];
+---
+
+<div class="barra">
+  <a class="marca" href="/" aria-label="Blog de Deívid Santos, início">
+    <img src="/favicon.png" width="40" height="40" alt="" />
+    <span>Blog</span>
+  </a>
+  <ul class="sl-hidden md:sl-flex print:hidden">
+    {links.map((l) => <li><a href={l.href}>{l.texto}</a></li>)}
+  </ul>
+  <div class="acoes sl-flex print:hidden">
+    <Search />
+    <div class="sl-hidden md:sl-flex acoes-extra">
+      <ThemeSelect />
+      <a class="botao-linkedin" href="https://www.linkedin.com/in/dnsto">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  @layer starlight.core {
+    .barra {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      height: 100%;
+      padding-top: 6px;
+      box-sizing: border-box;
+    }
+    .marca {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--sl-color-white);
+      font-weight: 600;
+      font-size: 1.1rem;
+      min-height: 2.75rem;
+    }
+    ul {
+      gap: 1.75rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    ul a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
+      color: var(--sl-color-white);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    ul a:hover {
+      text-decoration: underline;
+      text-decoration-color: var(--amarelo);
+      text-decoration-thickness: 3px;
+      text-underline-offset: 6px;
+    }
+    .acoes,
+    .acoes-extra {
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .botao-linkedin {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
+      padding-inline: 1rem;
+      background: var(--sl-color-white);
+      color: var(--sl-color-black);
+      font-family: var(--sl-font-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .botao-linkedin:hover {
+      background: var(--amarelo);
+      color: #121417;
+    }
+  }
+</style>

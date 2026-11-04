@@ -1,8 +1,7 @@
 /* ───────── Tokens ─────────
-   Mesmo visual neutro do site principal (deividsantos.com.br): cinzas neutros, índigo como cor de ação,
-   Bricolage Grotesque. Sem fundo colorido nem vidro: o texto fica sobre cor sólida, com contraste ≥ 4,5:1. */
+   Mesmo visual do site principal (deividsantos.com.br): papel, grafite, amarelo e linhas de caderno.
+   Bricolage Grotesque no texto, JetBrains Mono nos dados. Cantos retos, sem sombra nem vidro. */
 
-/* Bricolage Grotesque (OFL, ver public/fonts/LICENSE-bricolage-grotesque.txt): variável com eixo óptico. */
 @font-face {
   font-family: 'Bricolage Grotesque Variable';
   font-style: normal;
@@ -12,343 +11,251 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2');
+}
+
 :root {
   --sl-font: 'Bricolage Grotesque Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --sl-font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
+  --sl-font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
   --sl-line-height: 1.72;
-  --sl-content-width: 41rem; /* ~70 caracteres por linha com o corpo em 17px */
+  --sl-content-width: 41rem;
   --sl-text-body: 1.0625rem;
-  --sinal: #f7d117; /* amarelo do capacete: só decorativo, nunca texto */
+  --amarelo: #f5b700;
+  --ec-brdRad: 0;
 }
 
 html {
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
-  scrollbar-color: var(--sl-color-gray-5) transparent;
 }
 
-/* Tema escuro (padrão do Starlight) */
+/* Escuro (padrão do Starlight): grafite do site */
 :root {
-  --sl-color-white: #e8e8ee;
-  --sl-color-gray-1: #d2d2da;
-  --sl-color-gray-2: #9a9aa6;
-  --sl-color-gray-3: #8a8a96;
-  --sl-color-gray-4: #5a5a66;
-  --sl-color-gray-5: #3a3a44;
-  --sl-color-gray-6: #2a2a31;
-  --sl-color-gray-7: #232329;
-  --sl-color-black: #1a1a20;
-  --sl-color-accent-low: #2d2a4e;
-  --sl-color-accent: #968bf5;
-  --sl-color-accent-high: #c4bdfb;
+  --sl-color-white: #f2f0e8;
+  --sl-color-gray-1: #d9d6cc;
+  --sl-color-gray-2: #a7b0bc;
+  --sl-color-gray-3: #98a2b0;
+  --sl-color-gray-4: #5b6472;
+  --sl-color-gray-5: #2a313d;
+  --sl-color-gray-6: #171b22;
+  --sl-color-gray-7: #12161c;
+  --sl-color-black: #0f1216;
+  --sl-color-accent-low: #3a2d00;
+  --sl-color-accent: #f5b700;
+  --sl-color-accent-high: #ffca28;
+  --sl-color-text-accent: #ffca28;
 }
 
-/* Tema claro */
+/* Claro: papel do site */
 :root[data-theme='light'] {
-  --sl-color-white: #26262e;
-  --sl-color-gray-1: #34343c;
-  --sl-color-gray-2: #4e4e58;
-  --sl-color-gray-3: #6c6c76;
-  --sl-color-gray-4: #9a9aa5;
-  --sl-color-gray-5: #d6d6dd;
-  --sl-color-gray-6: #e6e6ea;
-  --sl-color-gray-7: #f4f4f6;
-  --sl-color-black: #ffffff;
-  --sl-color-accent-low: #edebfc;
-  --sl-color-accent: #4338ca;
-  --sl-color-accent-high: #2f278f;
+  --sl-color-white: #121417;
+  --sl-color-gray-1: #2b3036;
+  --sl-color-gray-2: #454b54;
+  --sl-color-gray-3: #5c636d;
+  --sl-color-gray-4: #8a8573;
+  --sl-color-gray-5: #cfc9ba;
+  --sl-color-gray-6: #ebe7dc;
+  --sl-color-gray-7: #e4dfd0;
+  --sl-color-black: #f5f3ec;
+  --sl-color-accent-low: #f6e7a8;
+  --sl-color-accent: #121417;
+  --sl-color-accent-high: #121417;
+  --sl-color-text-accent: #121417;
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--sl-color-accent) 35%, transparent);
+  background: var(--amarelo);
+  color: #121417;
+}
+
+/* Faixa amarela no topo, como no site principal */
+.header {
+  box-shadow: inset 0 6px 0 var(--amarelo);
+  background: var(--sl-color-black);
+  --sl-color-bg-nav: var(--sl-color-black);
 }
 
 /* ───────── Tipografia ───────── */
 h1,
 h2,
 h3,
-h4,
-.site-title {
+h4 {
   font-optical-sizing: auto;
-  letter-spacing: -0.015em;
-}
-
-.site-title {
-  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .sl-markdown-content h1 {
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+.sl-markdown-content a:not(.sl-link-button) {
+  text-decoration-color: var(--amarelo);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
 .sl-markdown-content :not(pre) > code {
-  font-size: 0.88em;
+  font-size: 0.85em;
+  border-radius: 0;
 }
 
-/* Tabelas respiram um pouco mais */
 .sl-markdown-content table {
   font-size: var(--sl-text-sm);
 }
 
-/* ───────── Assinatura sob o título das lições (componente PageTitle) ───────── */
+/* Sidebar: item atual com tarja de tinta, sem cantos arredondados */
+.sidebar-content a {
+  border-radius: 0;
+}
+
+/* ───────── Assinatura sob o título dos posts ───────── */
 .assinatura {
   margin: 0.5rem 0 0;
-  font-size: var(--sl-text-sm);
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-text-xs);
   color: var(--sl-color-gray-3);
 }
 .assinatura a {
   color: inherit;
   text-underline-offset: 3px;
 }
-.assinatura a:hover {
-  color: var(--sl-color-accent-high);
-}
 
-/* ───────── Home: hero ───────── */
+/* ───────── Home ───────── */
+[data-has-hero] .hero {
+  text-align: start;
+  justify-items: start;
+  padding-block: clamp(2.5rem, 8vw, 5rem) 1rem;
+  border-bottom: 2px solid var(--sl-color-white);
+}
 [data-has-hero] .hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
-  line-height: 1.06;
-  letter-spacing: -0.04em;
+  font-size: clamp(2.6rem, 8vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
   font-weight: 500;
 }
-
-/* O campo de pontos: uma frota de dispositivos varrida por uma onda de luz (o mesmo da página pessoal). */
-[data-has-hero] .hero {
-  position: relative;
-  isolation: isolate;
-}
-
-[data-has-hero] .hero::before,
-[data-has-hero] .hero::after {
-  content: '';
-  position: absolute;
-  inset: -3rem -1rem 0;
-  z-index: -1;
-  pointer-events: none;
-  background-size: 26px 26px;
-}
-
-[data-has-hero] .hero::before {
-  background-image: radial-gradient(circle, var(--sl-color-gray-5) 1.3px, transparent 1.8px);
-  -webkit-mask-image: radial-gradient(ellipse 80% 90% at 70% 40%, #000 0%, transparent 78%);
-  mask-image: radial-gradient(ellipse 80% 90% at 70% 40%, #000 0%, transparent 78%);
-}
-
-[data-has-hero] .hero::after {
-  background-image: radial-gradient(circle, var(--sl-color-accent) 1.6px, transparent 2.2px);
-  -webkit-mask-image: linear-gradient(100deg, transparent 0%, #000 50%, transparent 100%);
-  mask-image: linear-gradient(100deg, transparent 0%, #000 50%, transparent 100%);
-  -webkit-mask-size: 45% 100%;
-  mask-size: 45% 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: 78% 0;
-  mask-position: 78% 0;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  [data-has-hero] .hero::after {
-    animation: varredura 11s ease-in-out infinite;
-  }
-  @keyframes varredura {
-    from {
-      -webkit-mask-position: -100% 0;
-      mask-position: -100% 0;
-    }
-    to {
-      -webkit-mask-position: 200% 0;
-      mask-position: 200% 0;
-    }
-  }
-}
-
 [data-has-hero] .hero .tagline {
-  max-width: 34rem;
-}
-
-/* O momento memorável: um perfil de configuração real, com as trilhas como payload. */
-.perfil {
-  width: 100%;
-  max-width: 30rem;
-  margin-inline: auto;
-  border: 1px solid var(--sl-color-gray-5);
-  border-radius: 10px;
-  background: var(--sl-color-gray-7);
-  overflow: hidden;
-  text-align: left;
-}
-
-.perfil__barra {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.65rem 1rem;
-  border-bottom: 1px solid var(--sl-color-gray-5);
-  font-size: var(--sl-text-sm);
+  max-width: 38rem;
   color: var(--sl-color-gray-2);
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+}
+[data-has-hero] .hero .actions {
+  justify-content: flex-start;
 }
 
-.perfil__ok {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
+/* Botões como no site: contorno de 2px, primário amarelo */
+.sl-link-button {
+  border-radius: 0;
+  border: 2px solid var(--sl-color-white);
+  font-weight: 700;
   color: var(--sl-color-white);
-  font-weight: 600;
+  background: transparent;
+}
+.sl-link-button.primary {
+  background: var(--amarelo);
+  color: #121417;
+}
+.sl-link-button.primary:hover {
+  background: #ffca28;
+  color: #121417;
+}
+.sl-link-button.minimal {
+  border-color: var(--sl-color-white);
+  padding-inline: 1.25rem;
 }
 
-.perfil__ok::before {
-  content: '';
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 50%;
-  background: var(--sinal);
-}
-
-.perfil__corpo {
-  margin: 0;
-  padding: 1rem 1.15rem 1.2rem;
-  font-family: var(--sl-font-mono);
-  font-size: 0.78rem;
-  line-height: 1.75;
-  color: var(--sl-color-gray-2);
-  overflow-x: auto;
-  white-space: normal;
-}
-
-/* Cada linha do plist é um bloco; os espaços de indentação ficam preservados. */
-.perfil__corpo .l {
-  display: block;
-  white-space: pre;
-}
-.perfil__corpo .t {
-  color: var(--sl-color-gray-3);
-}
-.perfil__corpo .k {
-  color: var(--sl-color-accent-high);
-}
-.perfil__corpo .s {
-  color: var(--sl-color-white);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .perfil__corpo .l {
-    opacity: 0;
-    animation: perfil-entra 0.4s ease-out forwards;
-    animation-delay: calc(var(--i) * 70ms + 150ms);
-  }
-  @keyframes perfil-entra {
-    to {
-      opacity: 1;
-    }
-  }
-}
-
-/* Celular: o texto e o botão principal vêm antes do cartão (no HTML ele é o primeiro filho do hero). */
-@media (max-width: 50rem) {
-  .hero-html {
-    order: 2;
-  }
-  .perfil__corpo {
-    font-size: 0.7rem;
-    padding: 0.85rem 0.9rem 1rem;
-  }
-  .perfil__corpo .l {
-    white-space: pre-wrap; /* nenhuma linha do plist é cortada em tela estreita */
-    overflow-wrap: anywhere;
-  }
-}
-
-/* ───────── Home: trilhas em linhas clicáveis (mesmo padrão do site principal) ───────── */
+/* ───────── Lista de posts (data à esquerda, título e resumo à direita) ───────── */
+.sl-markdown-content .posts,
 .sl-markdown-content .trilhas {
   list-style: none;
-  margin: 1.5rem 0 2rem;
+  margin: 1.5rem 0 0;
   padding: 0;
+  border-top: 2px solid var(--sl-color-white);
 }
+.sl-markdown-content .posts li,
 .sl-markdown-content .trilhas li {
-  position: relative;
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: 0.25rem 1.5rem;
   margin: 0;
-  padding: 1.15rem 2.25rem 1.15rem 0;
-  border-top: 1px solid var(--sl-color-gray-5);
+  padding: 1.25rem 0;
+  border-bottom: 1px dotted var(--sl-color-gray-5);
 }
-.sl-markdown-content .trilhas li:last-child {
-  border-bottom: 1px solid var(--sl-color-gray-5);
+.sl-markdown-content .posts time {
+  padding-top: 0.35rem;
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-text-xs);
+  color: var(--sl-color-gray-3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
+.sl-markdown-content .posts a,
 .sl-markdown-content .trilhas a {
   color: var(--sl-color-white);
-  font-size: 1.1rem;
-  font-weight: 650;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
   text-decoration: none;
 }
-.sl-markdown-content .trilhas a::after {
-  content: '';
-  position: absolute;
-  inset: 0; /* a linha inteira é o link */
-}
-.sl-markdown-content .trilhas li:hover a {
-  color: var(--sl-color-accent);
+.sl-markdown-content .posts a:hover,
+.sl-markdown-content .trilhas a:hover {
   text-decoration: underline;
-  text-underline-offset: 4px;
+  text-decoration-color: var(--amarelo);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
 }
-.sl-markdown-content .trilhas li:has(a:focus-visible) {
-  outline: 2px solid var(--sl-color-accent);
-  outline-offset: -2px;
-  border-radius: 0.5rem;
-}
-.sl-markdown-content .trilhas a:focus-visible {
-  outline: none;
-}
+.sl-markdown-content .posts p,
 .sl-markdown-content .trilhas p {
-  margin: 0.25rem 0 0;
-  color: var(--sl-color-gray-3);
-}
-.sl-markdown-content .trilhas .meta {
-  margin-top: 0.4rem;
-  font-size: 0.875rem;
-}
-.sl-markdown-content .trilhas .comece::after {
-  content: '';
-  display: inline-block;
-  width: 0.5rem;
-  height: 0.5rem;
-  margin-left: 0.5rem;
-  background: var(--sinal);
-  border-radius: 1px;
-}
-/* seta desenhada: sinal fixo de que a linha é um link (não depende de hover) */
-.sl-markdown-content .trilhas li::after {
-  content: '';
-  position: absolute;
-  right: 0.35rem;
-  top: 50%;
-  width: 0.55rem;
-  height: 0.55rem;
-  margin-top: -0.275rem;
-  border-top: 2px solid var(--sl-color-gray-3);
-  border-right: 2px solid var(--sl-color-gray-3);
-  transform: rotate(45deg);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s;
-}
-.sl-markdown-content .trilhas li:hover::after {
-  border-color: var(--sl-color-accent);
-  transform: translateX(3px) rotate(45deg);
+  margin: 0.35rem 0 0;
+  color: var(--sl-color-gray-2);
+  font-size: var(--sl-text-sm);
 }
 
-/* ───────── Alvos de toque e botões ───────── */
-.sl-link-button {
-  border-radius: 999px;
+/* Lista de temas: sem coluna de data, o link ocupa a linha toda */
+.sl-markdown-content .trilhas li {
+  display: block;
 }
+.sl-markdown-content .trilhas .meta {
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-text-xs);
+  color: var(--sl-color-gray-3);
+}
+
+@media (max-width: 40rem) {
+  .sl-markdown-content .posts li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sl-markdown-content .posts time {
+    padding-top: 0;
+  }
+}
+
+/* ───────── Alvos de toque e rodapé ───────── */
 footer .meta a {
   display: inline-flex;
   align-items: center;
-  min-height: 2.75rem; /* "Editar página": alvo ≥ 44px */
+  min-height: 2.75rem;
 }
 
-/* Nota de independência no rodapé das lições */
 .aviso-independente {
   margin-top: 3rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--sl-color-gray-5);
+  border-top: 1px dotted var(--sl-color-gray-5);
   font-size: var(--sl-text-xs);
   color: var(--sl-color-gray-3);
+}
+
+/* Hero sempre alinhado à esquerda, também no celular (o Starlight centraliza abaixo de 50rem) */
+[data-has-hero] .hero > div {
+  text-align: start;
+  align-items: flex-start;
+}
+[data-has-hero] .hero .sl-flex {
+  justify-content: flex-start;
 }

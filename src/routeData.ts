@@ -5,7 +5,7 @@ const AUTOR_ID = 'https://deividsantos.com.br/#deivid';
 
 // Nome de cada trilha no breadcrumb (o pedaço da URL não tem acento nem maiúsculas).
 const NOMES_TRILHA: Record<string, string> = {
-  'curso-mdm-como-codigo': 'Curso: MDM como Código',
+  'curso-mdm-como-codigo': 'Série: MDM como Código',
   fundamentos: 'Fundamentos de MDM e ABM',
   'jamf-pro': 'Jamf Pro na prática',
   iac: 'IaC para dispositivos',

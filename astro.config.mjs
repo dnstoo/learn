@@ -65,7 +65,7 @@ export default defineConfig({
       lastUpdated: true,
       routeMiddleware: './src/routeData.ts',
       customCss: ['./src/styles/custom.css'],
-      components: { PageTitle: './src/components/PageTitle.astro' },
+      components: { PageTitle: './src/components/PageTitle.astro', Header: './src/components/Header.astro' },
       social: GITHUB_USER
         ? [{ icon: 'github', label: 'GitHub', href: `https://github.com/${GITHUB_USER}/${GITHUB_REPO}` }]
         : [],
@@ -92,6 +92,7 @@ export default defineConfig({
           items: [
             { label: 'Roadmap dos temas', slug: 'roadmap' },
             { label: 'Sobre o autor e o site', slug: 'sobre' },
+            { label: 'Site de Deívid Santos', link: SITE_PESSOAL },
           ],
         },
         ...(TEM_CURSO
