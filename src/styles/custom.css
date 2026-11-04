@@ -179,15 +179,14 @@ h4 {
 }
 .sl-markdown-content .posts li,
 .sl-markdown-content .trilhas li {
-  display: grid;
-  grid-template-columns: 8rem minmax(0, 1fr);
-  gap: 0.25rem 1.5rem;
+  display: block;
   margin: 0;
   padding: 1.25rem 0;
   border-bottom: 1px dotted var(--sl-color-gray-5);
 }
 .sl-markdown-content .posts time {
-  padding-top: 0.35rem;
+  display: block;
+  margin-bottom: 0.3rem;
   font-family: var(--sl-font-mono);
   font-size: var(--sl-text-xs);
   color: var(--sl-color-gray-3);
@@ -227,15 +226,6 @@ h4 {
   color: var(--sl-color-gray-3);
 }
 
-@media (max-width: 40rem) {
-  .sl-markdown-content .posts li {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .sl-markdown-content .posts time {
-    padding-top: 0;
-  }
-}
-
 /* ───────── Alvos de toque e rodapé ───────── */
 footer .meta a {
   display: inline-flex;
@@ -258,4 +248,34 @@ footer .meta a {
 }
 [data-has-hero] .hero .sl-flex {
   justify-content: flex-start;
+}
+
+/* Funko no círculo amarelo, como no site principal */
+.retrato-blog {
+  width: min(100%, 17rem);
+  aspect-ratio: 1;
+  padding: 1rem 1rem 0;
+  border: 6px solid var(--amarelo);
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--sl-color-gray-6);
+}
+.retrato-blog img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+.assinatura-avatar {
+  display: inline-block;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  vertical-align: middle;
+  background: var(--sl-color-gray-6);
+  object-fit: cover;
+  object-position: top;
 }
