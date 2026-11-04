@@ -91,7 +91,6 @@ export default defineConfig({
           label: 'Comece por aqui',
           items: [
             { label: 'Roadmap dos temas', slug: 'roadmap' },
-            { label: 'Sobre o autor e o site', slug: 'sobre' },
             { label: 'Site de Deívid Santos', link: SITE_PESSOAL },
           ],
         },

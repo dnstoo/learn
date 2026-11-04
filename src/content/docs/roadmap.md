@@ -39,4 +39,4 @@ Este site cresce por lições completas, não por páginas vazias. O que está n
 - Platform SSO com Entra ID, passo a passo
 - Hardening de macOS com CIS Benchmarks e Jamf Compliance
 
-Quer sugerir um tema? A página [Sobre](/sobre/) mostra como entrar em contato.
+Quer sugerir um tema? Fale comigo pelo [site](https://deividsantos.com.br/#contato).

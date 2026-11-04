@@ -5,15 +5,15 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const SITE = 'https://blog.deividsantos.com.br';
-const NOME = 'Aprenda Modern Workplace';
+const NOME = 'Blog Modern Workplace Apple';
 const RESUMO =
-  'Tutoriais em português sobre MDM, Jamf Pro, infraestrutura como código (IaC) e experiência digital do colaborador (DEX) para frotas Apple em ambientes corporativos. Autor: Deívid Santos. Conteúdo independente, sem afiliação com Apple, Jamf ou Microsoft.';
+  'Blog em português sobre MDM, Jamf Pro, infraestrutura como código (IaC) e experiência digital do colaborador (DEX) para frotas Apple em ambientes corporativos. Autor: Deívid Santos. Conteúdo independente, sem afiliação com Apple, Jamf ou Microsoft.';
 
 const docsDir = fileURLToPath(new URL('../src/content/docs/', import.meta.url));
 const publicDir = fileURLToPath(new URL('../public/', import.meta.url));
 
 const SECOES = [
-  { titulo: 'Comece por aqui', arquivos: ['roadmap.md', 'sobre.md'] },
+  { titulo: 'Comece por aqui', arquivos: ['roadmap.md'] },
   { titulo: 'Fundamentos de MDM e ABM', dir: 'fundamentos' },
   { titulo: 'Jamf Pro na prática', dir: 'jamf-pro' },
   { titulo: 'IaC para dispositivos', dir: 'iac' },

@@ -14,7 +14,7 @@ const data = new Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'long', y
   ehLicao && (
     <p class="assinatura">
       <img class="assinatura-avatar" src="/avatar-500.webp" width="28" height="28" alt="" />
-      Por <a href="/sobre/">Deívid Santos</a>
+      Por <a href="https://deividsantos.com.br/#sobre">Deívid Santos</a>
       {revisado && (
         <>
           {' '}· revisado em <time datetime={revisado.toISOString().slice(0, 10)}>{data.format(revisado)}</time>

@@ -1,11 +1,10 @@
-# Aprenda Modern Workplace
+# Blog Modern Workplace Apple
 
-> Tutoriais em português sobre MDM, Jamf Pro, infraestrutura como código (IaC) e experiência digital do colaborador (DEX) para frotas Apple em ambientes corporativos. Autor: Deívid Santos. Conteúdo independente, sem afiliação com Apple, Jamf ou Microsoft.
+> Blog em português sobre MDM, Jamf Pro, infraestrutura como código (IaC) e experiência digital do colaborador (DEX) para frotas Apple em ambientes corporativos. Autor: Deívid Santos. Conteúdo independente, sem afiliação com Apple, Jamf ou Microsoft.
 
 ## Comece por aqui
 
 - [Roadmap das trilhas](https://blog.deividsantos.com.br/roadmap/): O que já está publicado e o que vem a seguir nas trilhas de MDM, Jamf Pro, infraestrutura como código, DEX e Modern Workplace para Apple.
-- [Sobre o site e o autor](https://blog.deividsantos.com.br/sobre/): O que é o Modern Workplace na prática, como as lições são produzidas e revisadas, quem escreve e como corrigir ou sugerir temas.
 
 ## Fundamentos de MDM e ABM
 

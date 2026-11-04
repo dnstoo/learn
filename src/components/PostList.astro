@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 
 // Posts = todas as páginas com data de revisão, exceto índices e páginas institucionais; mais recentes primeiro.
-const fora = new Set(['index', '404', 'sobre', 'roadmap', 'curso-mdm-como-codigo']);
+const fora = new Set(['index', '404', 'roadmap', 'curso-mdm-como-codigo']);
 const posts = (await getCollection('docs'))
   .filter((p) => !fora.has(p.id) && !p.id.endsWith('/index') && p.data.lastUpdated instanceof Date)
   .sort((a, b) => (b.data.lastUpdated as Date).getTime() - (a.data.lastUpdated as Date).getTime());
