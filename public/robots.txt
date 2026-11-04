@@ -33,4 +33,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://learn.deividsantos.com.br/sitemap-index.xml
+Sitemap: https://blog.deividsantos.com.br/sitemap-index.xml

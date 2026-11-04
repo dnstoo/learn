@@ -47,4 +47,3 @@ O resultado é um Mac que sai da caixa, vai direto para a mão do colaborador e 
 
 Escolha um Mac de laboratório, apague-o e ligue-o do zero com a rede liberada. Anote cada tela do Assistente que aparece e compare com a configuração que você definiu. O que aparecer e você não esperava é o que o usuário vai estranhar.
 
-Próxima lição: [Supervisão e tipos de enrollment](/fundamentos/supervisao-e-tipos-de-enrollment/).

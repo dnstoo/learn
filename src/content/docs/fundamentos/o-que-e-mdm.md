@@ -66,4 +66,3 @@ profiles status -type enrollment
 
 A saída informa se o Mac foi inscrito via ADE ("Enrolled via DEP"), se está sob MDM e qual é o servidor. Depois abra **Ajustes do Sistema → Geral → Gestão de Dispositivos** e compare os perfis listados com o que você espera encontrar. Repita em um Mac de teste que nunca foi inscrito para ver a diferença.
 
-Próxima lição: [Apple Business Manager e ADE](/fundamentos/apple-business-manager-e-ade/).

@@ -1,46 +1,66 @@
 /* ───────── Tokens ─────────
-   Tinta azul-marinho, cobalto como cor de ação, âmbar só para sinalizar.
-   Tipografia: Bricolage Grotesque nos títulos, Public Sans no texto, JetBrains Mono no código. */
+   Mesmo visual neutro do site principal (deividsantos.com.br): cinzas neutros, índigo como cor de ação,
+   Bricolage Grotesque. Sem fundo colorido nem vidro: o texto fica sobre cor sólida, com contraste ≥ 4,5:1. */
+
+/* Bricolage Grotesque (OFL, ver public/fonts/LICENSE-bricolage-grotesque.txt): variável com eixo óptico. */
+@font-face {
+  font-family: 'Bricolage Grotesque Variable';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('/fonts/bricolage-grotesque-latin-opsz-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 :root {
-  --sl-font: 'Public Sans Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --sl-font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --sl-font: 'Bricolage Grotesque Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --sl-font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
   --sl-line-height: 1.72;
-  --sl-content-width: 46rem;
-  --ds-display: 'Bricolage Grotesque Variable', 'Public Sans Variable', system-ui, sans-serif;
-  --ds-sinal: #f2b233;
+  --sl-content-width: 41rem; /* ~70 caracteres por linha com o corpo em 17px */
+  --sl-text-body: 1.0625rem;
+  --sinal: #f7d117; /* amarelo do capacete: só decorativo, nunca texto */
+}
+
+html {
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  scrollbar-color: var(--sl-color-gray-5) transparent;
 }
 
 /* Tema escuro (padrão do Starlight) */
 :root {
-  --sl-color-white: #f3f6fa;
-  --sl-color-gray-1: #dde4ec;
-  --sl-color-gray-2: #b4c0ce;
-  --sl-color-gray-3: #8493a6;
-  --sl-color-gray-4: #566578;
-  --sl-color-gray-5: #2f3f56;
-  --sl-color-gray-6: #1c2a3e;
-  --sl-color-gray-7: #131e2f;
-  --sl-color-black: #0b1322;
-  --sl-color-accent-low: #14245e;
-  --sl-color-accent: #4b74ff;
-  --sl-color-accent-high: #b9caff;
+  --sl-color-white: #e8e8ee;
+  --sl-color-gray-1: #d2d2da;
+  --sl-color-gray-2: #9a9aa6;
+  --sl-color-gray-3: #8a8a96;
+  --sl-color-gray-4: #5a5a66;
+  --sl-color-gray-5: #3a3a44;
+  --sl-color-gray-6: #2a2a31;
+  --sl-color-gray-7: #232329;
+  --sl-color-black: #1a1a20;
+  --sl-color-accent-low: #2d2a4e;
+  --sl-color-accent: #968bf5;
+  --sl-color-accent-high: #c4bdfb;
 }
 
 /* Tema claro */
 :root[data-theme='light'] {
-  --sl-color-white: #0e1a2b;
-  --sl-color-gray-1: #1a2638;
-  --sl-color-gray-2: #2b3a50;
-  --sl-color-gray-3: #51627a;
-  --sl-color-gray-4: #7b8ca3;
-  --sl-color-gray-5: #b7c3d2;
-  --sl-color-gray-6: #e2e8f0;
-  --sl-color-gray-7: #eef2f6;
-  --sl-color-black: #fbfcfd;
-  --sl-color-accent-low: #d6e0ff;
-  --sl-color-accent: #2447d6;
-  --sl-color-accent-high: #14298f;
+  --sl-color-white: #26262e;
+  --sl-color-gray-1: #34343c;
+  --sl-color-gray-2: #4e4e58;
+  --sl-color-gray-3: #6c6c76;
+  --sl-color-gray-4: #9a9aa5;
+  --sl-color-gray-5: #d6d6dd;
+  --sl-color-gray-6: #e6e6ea;
+  --sl-color-gray-7: #f4f4f6;
+  --sl-color-black: #ffffff;
+  --sl-color-accent-low: #edebfc;
+  --sl-color-accent: #4338ca;
+  --sl-color-accent-high: #2f278f;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--sl-color-accent) 35%, transparent);
 }
 
 /* ───────── Tipografia ───────── */
@@ -49,9 +69,12 @@ h2,
 h3,
 h4,
 .site-title {
-  font-family: var(--ds-display);
   font-optical-sizing: auto;
   letter-spacing: -0.015em;
+}
+
+.site-title {
+  font-weight: 700;
 }
 
 .sl-markdown-content h1 {
@@ -65,6 +88,20 @@ h4,
 /* Tabelas respiram um pouco mais */
 .sl-markdown-content table {
   font-size: var(--sl-text-sm);
+}
+
+/* ───────── Assinatura sob o título das lições (componente PageTitle) ───────── */
+.assinatura {
+  margin: 0.5rem 0 0;
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-3);
+}
+.assinatura a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+.assinatura a:hover {
+  color: var(--sl-color-accent-high);
 }
 
 /* ───────── Home: hero ───────── */
@@ -115,7 +152,7 @@ h4,
   width: 0.55rem;
   height: 0.55rem;
   border-radius: 50%;
-  background: var(--ds-sinal);
+  background: var(--sinal);
 }
 
 .perfil__corpo {
@@ -155,6 +192,106 @@ h4,
       opacity: 1;
     }
   }
+}
+
+/* Celular: o texto e o botão principal vêm antes do cartão (no HTML ele é o primeiro filho do hero). */
+@media (max-width: 50rem) {
+  .hero-html {
+    order: 2;
+  }
+  .perfil__corpo {
+    font-size: 0.7rem;
+    padding: 0.85rem 0.9rem 1rem;
+  }
+  .perfil__corpo .l {
+    white-space: pre-wrap; /* nenhuma linha do plist é cortada em tela estreita */
+    overflow-wrap: anywhere;
+  }
+}
+
+/* ───────── Home: trilhas em linhas clicáveis (mesmo padrão do site principal) ───────── */
+.sl-markdown-content .trilhas {
+  list-style: none;
+  margin: 1.5rem 0 2rem;
+  padding: 0;
+}
+.sl-markdown-content .trilhas li {
+  position: relative;
+  margin: 0;
+  padding: 1.15rem 2.25rem 1.15rem 0;
+  border-top: 1px solid var(--sl-color-gray-5);
+}
+.sl-markdown-content .trilhas li:last-child {
+  border-bottom: 1px solid var(--sl-color-gray-5);
+}
+.sl-markdown-content .trilhas a {
+  color: var(--sl-color-white);
+  font-size: 1.1rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.sl-markdown-content .trilhas a::after {
+  content: '';
+  position: absolute;
+  inset: 0; /* a linha inteira é o link */
+}
+.sl-markdown-content .trilhas li:hover a {
+  color: var(--sl-color-accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.sl-markdown-content .trilhas li:has(a:focus-visible) {
+  outline: 2px solid var(--sl-color-accent);
+  outline-offset: -2px;
+  border-radius: 0.5rem;
+}
+.sl-markdown-content .trilhas a:focus-visible {
+  outline: none;
+}
+.sl-markdown-content .trilhas p {
+  margin: 0.25rem 0 0;
+  color: var(--sl-color-gray-3);
+}
+.sl-markdown-content .trilhas .meta {
+  margin-top: 0.4rem;
+  font-size: 0.875rem;
+}
+.sl-markdown-content .trilhas .comece::after {
+  content: '';
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.5rem;
+  background: var(--sinal);
+  border-radius: 1px;
+}
+/* seta desenhada: sinal fixo de que a linha é um link (não depende de hover) */
+.sl-markdown-content .trilhas li::after {
+  content: '';
+  position: absolute;
+  right: 0.35rem;
+  top: 50%;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-top: -0.275rem;
+  border-top: 2px solid var(--sl-color-gray-3);
+  border-right: 2px solid var(--sl-color-gray-3);
+  transform: rotate(45deg);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s;
+}
+.sl-markdown-content .trilhas li:hover::after {
+  border-color: var(--sl-color-accent);
+  transform: translateX(3px) rotate(45deg);
+}
+
+/* ───────── Alvos de toque e botões ───────── */
+.sl-link-button {
+  border-radius: 999px;
+}
+footer .meta a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem; /* "Editar página": alvo ≥ 44px */
 }
 
 /* Nota de independência no rodapé das lições */

@@ -1,0 +1,25 @@
+---
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+
+// Título padrão do Starlight + assinatura (autor, data de revisão, tempo de leitura) nas lições.
+const { entry, lastUpdated } = Astro.locals.starlightRoute;
+const ehLicao = entry.data.template !== 'splash';
+const revisado = lastUpdated ?? (entry.data.lastUpdated instanceof Date ? entry.data.lastUpdated : undefined);
+const minutos = Math.max(1, Math.round(((entry.body ?? '').split(/\s+/).filter(Boolean).length) / 200));
+const data = new Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<Default {...Astro.props}><slot /></Default>
+{
+  ehLicao && (
+    <p class="assinatura">
+      Por <a href="/sobre/">Deívid Santos</a>
+      {revisado && (
+        <>
+          {' '}· revisado em <time datetime={revisado.toISOString().slice(0, 10)}>{data.format(revisado)}</time>
+        </>
+      )}{' '}
+      · {minutos} min de leitura
+    </p>
+  )
+}

@@ -4,31 +4,31 @@
 
 ## Comece por aqui
 
-- [Roadmap das trilhas](https://learn.deividsantos.com.br/roadmap/): O que já está publicado e o que vem a seguir nas trilhas de MDM, Jamf Pro, infraestrutura como código, DEX e Modern Workplace para Apple.
-- [Sobre o autor e o site](https://learn.deividsantos.com.br/sobre/): Quem escreve o Aprenda Modern Workplace, como o conteúdo é produzido e como corrigir ou sugerir temas.
+- [Roadmap das trilhas](https://blog.deividsantos.com.br/roadmap/): O que já está publicado e o que vem a seguir nas trilhas de MDM, Jamf Pro, infraestrutura como código, DEX e Modern Workplace para Apple.
+- [Sobre o autor e o site](https://blog.deividsantos.com.br/sobre/): Quem escreve o Aprenda Modern Workplace, como o conteúdo é produzido e como corrigir ou sugerir temas.
 
 ## Fundamentos de MDM e ABM
 
-- [O que é MDM e como o macOS e o iOS conversam com ele](https://learn.deividsantos.com.br/fundamentos/o-que-e-mdm/): Entenda o protocolo MDM da Apple: enrollment, notificações push (APNs), perfis, comandos e Declarative Device Management, com o fluxo de ponta a ponta.
-- [Apple Business Manager e Automated Device Enrollment (ADE)](https://learn.deividsantos.com.br/fundamentos/apple-business-manager-e-ade/): Como o ABM atribui dispositivos ao seu MDM e como o ADE entrega Mac e iPhone prontos para uso, sem encostar na máquina. Inclui checklist de implantação.
-- [Supervisão e tipos de enrollment: qual escolher para cada cenário](https://learn.deividsantos.com.br/fundamentos/supervisao-e-tipos-de-enrollment/): Compare ADE, enrollment iniciado pelo usuário e User Enrollment, entenda o que a supervisão libera e escolha o modelo certo para dispositivos corporativos e BYOD.
+- [O que é MDM e como o macOS e o iOS conversam com ele](https://blog.deividsantos.com.br/fundamentos/o-que-e-mdm/): Entenda o protocolo MDM da Apple: enrollment, notificações push (APNs), perfis, comandos e Declarative Device Management, com o fluxo de ponta a ponta.
+- [Apple Business Manager e Automated Device Enrollment (ADE)](https://blog.deividsantos.com.br/fundamentos/apple-business-manager-e-ade/): Como o ABM atribui dispositivos ao seu MDM e como o ADE entrega Mac e iPhone prontos para uso, sem encostar na máquina. Inclui checklist de implantação.
+- [Supervisão e tipos de enrollment: qual escolher para cada cenário](https://blog.deividsantos.com.br/fundamentos/supervisao-e-tipos-de-enrollment/): Compare ADE, enrollment iniciado pelo usuário e User Enrollment, entenda o que a supervisão libera e escolha o modelo certo para dispositivos corporativos e BYOD.
 
 ## Jamf Pro na prática
 
-- [Smart Groups e Extension Attributes no Jamf Pro: o par que organiza a frota](https://learn.deividsantos.com.br/jamf-pro/smart-groups-e-extension-attributes/): Aprenda a combinar Smart Groups e Extension Attributes no Jamf Pro para segmentar a frota, com convenção de nomes, exemplo de script e armadilhas de desempenho.
-- [Scripts para o Jamf Pro que rodam em produção sem surpresas](https://learn.deividsantos.com.br/jamf-pro/scripts-para-producao/): Um modelo de script Bash para o Jamf Pro com parâmetros, log, idempotência e tratamento de erro, mais as regras que evitam incidentes em frotas Mac.
+- [Smart Groups e Extension Attributes no Jamf Pro: o par que organiza a frota](https://blog.deividsantos.com.br/jamf-pro/smart-groups-e-extension-attributes/): Aprenda a combinar Smart Groups e Extension Attributes no Jamf Pro para segmentar a frota, com convenção de nomes, exemplo de script e armadilhas de desempenho.
+- [Scripts para o Jamf Pro que rodam em produção sem surpresas](https://blog.deividsantos.com.br/jamf-pro/scripts-para-producao/): Um modelo de script Bash para o Jamf Pro com parâmetros, log, idempotência e tratamento de erro, mais as regras que evitam incidentes em frotas Mac.
 
 ## IaC para dispositivos
 
-- [Infraestrutura como código para MDM: por que e por onde começar](https://learn.deividsantos.com.br/iac/iac-para-mdm-por-que-e-por-onde-comecar/): Trate a configuração do seu MDM como código: Git como fonte da verdade, pull requests, ferramentas disponíveis e um caminho em quatro etapas para começar sem risco.
-- [Pipeline de validação com GitHub Actions para perfis e scripts de MDM](https://learn.deividsantos.com.br/iac/pipeline-de-validacao-com-github-actions/): Monte um pipeline no GitHub Actions que valida perfis .mobileconfig e scripts Bash em cada pull request, e entenda como evoluir para a aplicação controlada.
+- [Infraestrutura como código para MDM: por que e por onde começar](https://blog.deividsantos.com.br/iac/iac-para-mdm-por-que-e-por-onde-comecar/): Trate a configuração do seu MDM como código: Git como fonte da verdade, pull requests, ferramentas disponíveis e um caminho em quatro etapas para começar sem risco.
+- [Pipeline de validação com GitHub Actions para perfis e scripts de MDM](https://blog.deividsantos.com.br/iac/pipeline-de-validacao-com-github-actions/): Monte um pipeline no GitHub Actions que valida perfis .mobileconfig e scripts Bash em cada pull request, e entenda como evoluir para a aplicação controlada.
 
 ## DEX: experiência do colaborador
 
-- [O que é DEX (Digital Employee Experience) e como medir em frotas Apple](https://learn.deividsantos.com.br/dex/o-que-e-dex-e-como-medir/): Entenda o que é Digital Employee Experience, quais indicadores acompanhar em Macs corporativos e como medir sem invadir a privacidade, respeitando a LGPD.
-- [Sinais de DEX no Mac com Extension Attributes: disco, reinício e bateria](https://learn.deividsantos.com.br/dex/sinais-de-dex-com-extension-attributes/): Três Extension Attributes em Bash para o Jamf Pro que coletam espaço livre em disco, dias sem reiniciar e ciclos de bateria, com Smart Groups prontos para acionar remediação.
+- [O que é DEX (Digital Employee Experience) e como medir em frotas Apple](https://blog.deividsantos.com.br/dex/o-que-e-dex-e-como-medir/): Entenda o que é Digital Employee Experience, quais indicadores acompanhar em Macs corporativos e como medir sem invadir a privacidade, respeitando a LGPD.
+- [Sinais de DEX no Mac com Extension Attributes: disco, reinício e bateria](https://blog.deividsantos.com.br/dex/sinais-de-dex-com-extension-attributes/): Três Extension Attributes em Bash para o Jamf Pro que coletam espaço livre em disco, dias sem reiniciar e ciclos de bateria, com Smart Groups prontos para acionar remediação.
 
 ## Modern Workplace
 
-- [Mapa do Modern Workplace Apple: identidade, gestão, segurança e experiência](https://learn.deividsantos.com.br/modern-workplace/mapa-do-modern-workplace-apple/): Uma visão de conjunto do Modern Workplace para Apple: as cinco camadas, como elas se conectam e por onde começar a organizar a sua frota.
-- [Platform SSO no macOS: visão geral, requisitos e como planejar o piloto](https://learn.deividsantos.com.br/modern-workplace/platform-sso-visao-geral/): O que é o Platform SSO no macOS, quais peças ele exige (IdP, MDM e macOS), os métodos de autenticação e um plano de piloto em anéis para reduzir o risco.
+- [Mapa do Modern Workplace Apple: identidade, gestão, segurança e experiência](https://blog.deividsantos.com.br/modern-workplace/mapa-do-modern-workplace-apple/): Uma visão de conjunto do Modern Workplace para Apple: as cinco camadas, como elas se conectam e por onde começar a organizar a sua frota.
+- [Platform SSO no macOS: visão geral, requisitos e como planejar o piloto](https://blog.deividsantos.com.br/modern-workplace/platform-sso-visao-geral/): O que é o Platform SSO no macOS, quais peças ele exige (IdP, MDM e macOS), os métodos de autenticação e um plano de piloto em anéis para reduzir o risco.

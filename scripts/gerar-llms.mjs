@@ -4,7 +4,7 @@ import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-const SITE = 'https://learn.deividsantos.com.br';
+const SITE = 'https://blog.deividsantos.com.br';
 const NOME = 'Aprenda Modern Workplace';
 const RESUMO =
   'Tutoriais em português sobre MDM, Jamf Pro, infraestrutura como código (IaC) e experiência digital do colaborador (DEX) para frotas Apple em ambientes corporativos. Autor: Deivid Santos. Conteúdo independente, sem afiliação com Apple, Jamf ou Microsoft.';

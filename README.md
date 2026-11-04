@@ -1,6 +1,6 @@
 # Aprenda Modern Workplace
 
-Site de tutoriais em português sobre MDM, Jamf Pro, infraestrutura como código e DEX para frotas Apple corporativas. Publicado em https://learn.deividsantos.com.br
+Site de tutoriais em português sobre MDM, Jamf Pro, infraestrutura como código e DEX para frotas Apple corporativas. Publicado em https://blog.deividsantos.com.br
 
 Feito com [Astro Starlight](https://starlight.astro.build/) e publicado pelo GitHub Pages.
 

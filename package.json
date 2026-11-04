@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node scripts/gerar-llms.mjs",
+    "prebuild": "node scripts/checar-sidebar.mjs && node scripts/gerar-llms.mjs",
     "build": "astro build",
     "preview": "astro preview"
   },

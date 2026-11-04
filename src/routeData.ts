@@ -1,7 +1,17 @@
 import { defineRouteMiddleware } from '@astrojs/starlight/route-data';
 
-const SITE = 'https://learn.deividsantos.com.br';
+const SITE = 'https://blog.deividsantos.com.br';
 const AUTOR_ID = 'https://deividsantos.com.br/#deivid';
+
+// Nome de cada trilha no breadcrumb (o pedaço da URL não tem acento nem maiúsculas).
+const NOMES_TRILHA: Record<string, string> = {
+  'curso-mdm-como-codigo': 'Curso: MDM como Código',
+  fundamentos: 'Fundamentos de MDM e ABM',
+  'jamf-pro': 'Jamf Pro na prática',
+  iac: 'IaC para dispositivos',
+  dex: 'DEX: experiência do colaborador',
+  'modern-workplace': 'Modern Workplace',
+};
 
 // Injeta dados estruturados (schema.org TechArticle + BreadcrumbList) em cada lição.
 export const onRequest = defineRouteMiddleware((context) => {
@@ -22,7 +32,7 @@ export const onRequest = defineRouteMiddleware((context) => {
       ...partes.slice(0, -1).map((parte, i) => ({
         '@type': 'ListItem',
         position: i + 2,
-        name: parte.replace(/-/g, ' '),
+        name: NOMES_TRILHA[parte] ?? parte.replace(/-/g, ' '),
         item: `${SITE}/${partes.slice(0, i + 1).join('/')}/`,
       })),
       { '@type': 'ListItem', position: partes.length + 1, name: entry.data.title, item: url },

@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+
+// Posts = todas as páginas com data de revisão, exceto índices e páginas institucionais; mais recentes primeiro.
+const fora = new Set(['index', '404', 'sobre', 'roadmap', 'curso-mdm-como-codigo']);
+const posts = (await getCollection('docs'))
+  .filter((p) => !fora.has(p.id) && !p.id.endsWith('/index') && p.data.lastUpdated instanceof Date)
+  .sort((a, b) => (b.data.lastUpdated as Date).getTime() - (a.data.lastUpdated as Date).getTime());
+const data = new Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<ol class="trilhas">
+  {posts.map((p) => (
+    <li>
+      <a href={`/${p.id}/`}>{p.data.title}</a>
+      <p>{p.data.description}</p>
+      <p class="meta"><time datetime={(p.data.lastUpdated as Date).toISOString().slice(0, 10)}>{data.format(p.data.lastUpdated as Date)}</time></p>
+    </li>
+  ))}
+</ol>

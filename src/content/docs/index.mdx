@@ -1,18 +1,18 @@
 ---
-title: Modern Workplace para Apple em português
-description: Tutoriais práticos em português sobre MDM, Jamf Pro, infraestrutura como código e experiência digital do colaborador (DEX) para frotas Apple corporativas.
+title: Blog de Modern Workplace para Apple
+description: Blog em português com posts práticos sobre MDM, Jamf Pro, infraestrutura como código e experiência digital do colaborador (DEX) para frotas Apple corporativas.
 template: splash
 lastUpdated: 2026-10-17
 hero:
-  title: Modern Workplace para Apple, na prática
-  tagline: Tutoriais em português sobre MDM, Jamf Pro, infraestrutura como código e experiência do colaborador, escritos por quem administra frotas Apple em ambientes corporativos.
+  title: Blog de Modern Workplace para Apple
+  tagline: Posts em português sobre MDM, Jamf Pro, infraestrutura como código e experiência do colaborador, escritos por quem administra frotas Apple em ambientes corporativos.
   image:
     html: |
       <div class="perfil" role="img" aria-label="Exemplo de perfil de configuração que lista as cinco trilhas do site: Fundamentos de MDM e ABM, Jamf Pro na prática, IaC para dispositivos, DEX e Modern Workplace.">
         <div class="perfil__barra"><span>Perfil de configuração</span><span class="perfil__ok">Verificado</span></div>
         <pre class="perfil__corpo"><code><span class="l" style="--i:0"><span class="t">&lt;dict&gt;</span></span>
         <span class="l" style="--i:1">  <span class="t">&lt;key&gt;</span><span class="k">PayloadDisplayName</span><span class="t">&lt;/key&gt;</span></span>
-        <span class="l" style="--i:2">  <span class="t">&lt;string&gt;</span><span class="s">Aprenda Modern Workplace</span><span class="t">&lt;/string&gt;</span></span>
+        <span class="l" style="--i:2">  <span class="t">&lt;string&gt;</span><span class="s">Blog Modern Workplace Apple</span><span class="t">&lt;/string&gt;</span></span>
         <span class="l" style="--i:3">  <span class="t">&lt;key&gt;</span><span class="k">Trilhas</span><span class="t">&lt;/key&gt;</span></span>
         <span class="l" style="--i:4">  <span class="t">&lt;array&gt;</span></span>
         <span class="l" style="--i:5">    <span class="t">&lt;string&gt;</span><span class="s">Fundamentos de MDM e ABM</span><span class="t">&lt;/string&gt;</span></span>
@@ -26,34 +26,35 @@ hero:
         <span class="l" style="--i:13"><span class="t">&lt;/dict&gt;</span></span></code></pre>
       </div>
   actions:
-    - text: Comece pelos fundamentos
-      link: /fundamentos/o-que-e-mdm/
+    - text: Ler os posts recentes
+      link: '#posts-recentes'
       icon: right-arrow
-    - text: Ver o roadmap
-      link: /roadmap/
+    - text: Série MDM como Código
+      link: /curso-mdm-como-codigo/
       variant: minimal
 ---
 
+import PostList from '../../components/PostList.astro';
+
+## Posts recentes
+
+<PostList />
+
 ## O que você encontra aqui
 
-Lições curtas e práticas, na ordem em que você precisaria delas ao montar ou herdar uma frota Apple corporativa. Cada lição diz o que resolve, mostra o caminho com exemplos que você pode adaptar e termina com o que testar antes de ir para produção. A data de revisão aparece no rodapé de cada página.
+Posts curtos e práticos, agrupados por tema na ordem em que você precisaria deles ao montar ou herdar uma frota Apple corporativa. Cada post diz o que resolve, mostra o caminho com exemplos que você pode adaptar e termina com o que testar antes de ir para produção. A data de revisão aparece no topo de cada post.
 
-## Trilhas
+## Por tema
 
-**[Fundamentos de MDM e ABM](/fundamentos/o-que-e-mdm/)**
-Como o MDM da Apple funciona de ponta a ponta, o que o Apple Business Manager e o ADE entregam e quando usar cada tipo de enrollment.
+Nunca usou MDM? Comece pelo primeiro tema. Já administra um Jamf Pro? Vá direto ao que precisa.
 
-**[Jamf Pro na prática](/jamf-pro/smart-groups-e-extension-attributes/)**
-Smart Groups, Extension Attributes e scripts escritos para rodar em produção sem surpresas.
-
-**[IaC para dispositivos](/iac/iac-para-mdm-por-que-e-por-onde-comecar/)**
-Tratar a configuração do MDM como código: Git como fonte da verdade, pull requests, validação automática e promoção entre ambientes.
-
-**[DEX: experiência do colaborador](/dex/o-que-e-dex-e-como-medir/)**
-O que medir para saber se o Mac do colaborador funciona bem, e como coletar esses sinais com Extension Attributes, respeitando a LGPD.
-
-**[Modern Workplace](/modern-workplace/mapa-do-modern-workplace-apple/)**
-O mapa completo: identidade, gestão, segurança e experiência trabalhando juntas, incluindo uma visão geral do Platform SSO.
+<ol class="trilhas">
+<li><a href="/fundamentos/o-que-e-mdm/">Fundamentos de MDM e ABM</a><p>Como o MDM da Apple funciona de ponta a ponta, o que o Apple Business Manager e o ADE entregam e quando usar cada tipo de enrollment.</p><p class="meta comece">Trilha 1 · 3 lições · comece aqui</p></li>
+<li><a href="/jamf-pro/smart-groups-e-extension-attributes/">Jamf Pro na prática</a><p>Smart Groups, Extension Attributes e scripts escritos para rodar em produção sem surpresas.</p><p class="meta">Trilha 2 · 2 lições</p></li>
+<li><a href="/iac/iac-para-mdm-por-que-e-por-onde-comecar/">IaC para dispositivos</a><p>Tratar a configuração do MDM como código: Git como fonte da verdade, pull requests, validação automática e promoção entre ambientes.</p><p class="meta">Trilha 3 · 2 lições</p></li>
+<li><a href="/dex/o-que-e-dex-e-como-medir/">DEX: experiência do colaborador</a><p>O que medir para saber se o Mac do colaborador funciona bem, e como coletar esses sinais com Extension Attributes, respeitando a LGPD.</p><p class="meta">Trilha 4 · 2 lições</p></li>
+<li><a href="/modern-workplace/mapa-do-modern-workplace-apple/">Modern Workplace</a><p>O mapa completo: identidade, gestão, segurança e experiência trabalhando juntas, incluindo uma visão geral do Platform SSO.</p><p class="meta">Trilha 5 · 2 lições</p></li>
+</ol>
 
 ## Para quem é
 

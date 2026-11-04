@@ -2,13 +2,13 @@
 
 > Tutoriais em português sobre MDM, Jamf Pro, infraestrutura como código (IaC) e experiência digital do colaborador (DEX) para frotas Apple em ambientes corporativos. Autor: Deivid Santos. Conteúdo independente, sem afiliação com Apple, Jamf ou Microsoft.
 
-Site: https://learn.deividsantos.com.br/
+Site: https://blog.deividsantos.com.br/
 
 ---
 
 # Roadmap das trilhas
 
-URL: https://learn.deividsantos.com.br/roadmap/
+URL: https://blog.deividsantos.com.br/roadmap/
 
 Este site cresce por lições completas, não por páginas vazias. O que está na lista "Publicado" já está no ar; o resto é a ordem provável de publicação e pode mudar conforme o que mais ajudar quem lê.
 
@@ -49,7 +49,7 @@ Quer sugerir um tema? A página [Sobre](/sobre/) mostra como entrar em contato.
 
 # Sobre o autor e o site
 
-URL: https://learn.deividsantos.com.br/sobre/
+URL: https://blog.deividsantos.com.br/sobre/
 
 ## Quem escreve
 
@@ -78,7 +78,7 @@ Encontrou algo errado, desatualizado ou quer um tema novo? Abra uma issue no rep
 
 # O que é MDM e como o macOS e o iOS conversam com ele
 
-URL: https://learn.deividsantos.com.br/fundamentos/o-que-e-mdm/
+URL: https://blog.deividsantos.com.br/fundamentos/o-que-e-mdm/
 
 MDM (Mobile Device Management) é o mecanismo nativo da Apple para configurar, proteger e manter dispositivos à distância. Ele já vem dentro do macOS, iOS e iPadOS. O que você compra ou hospeda (Jamf Pro, Intune, Mosyle, Hexnode e outros) é um **servidor MDM**: um sistema que fala esse protocolo com os dispositivos.
 
@@ -140,13 +140,11 @@ profiles status -type enrollment
 
 A saída informa se o Mac foi inscrito via ADE ("Enrolled via DEP"), se está sob MDM e qual é o servidor. Depois abra **Ajustes do Sistema → Geral → Gestão de Dispositivos** e compare os perfis listados com o que você espera encontrar. Repita em um Mac de teste que nunca foi inscrito para ver a diferença.
 
-Próxima lição: [Apple Business Manager e ADE](/fundamentos/apple-business-manager-e-ade/).
-
 ---
 
 # Apple Business Manager e Automated Device Enrollment (ADE)
 
-URL: https://learn.deividsantos.com.br/fundamentos/apple-business-manager-e-ade/
+URL: https://blog.deividsantos.com.br/fundamentos/apple-business-manager-e-ade/
 
 O Apple Business Manager (ABM) é o portal em que a organização informa à Apple quais dispositivos são dela e qual servidor MDM deve gerenciá-los. O **Automated Device Enrollment (ADE)** é o processo que usa essa informação: quando o dispositivo é ligado pela primeira vez, ele consulta a Apple, descobre que pertence a uma organização e se inscreve no MDM durante o Assistente de Configuração, antes de o usuário chegar à área de trabalho.
 
@@ -189,13 +187,11 @@ O resultado é um Mac que sai da caixa, vai direto para a mão do colaborador e 
 
 Escolha um Mac de laboratório, apague-o e ligue-o do zero com a rede liberada. Anote cada tela do Assistente que aparece e compare com a configuração que você definiu. O que aparecer e você não esperava é o que o usuário vai estranhar.
 
-Próxima lição: [Supervisão e tipos de enrollment](/fundamentos/supervisao-e-tipos-de-enrollment/).
-
 ---
 
 # Supervisão e tipos de enrollment: qual escolher para cada cenário
 
-URL: https://learn.deividsantos.com.br/fundamentos/supervisao-e-tipos-de-enrollment/
+URL: https://blog.deividsantos.com.br/fundamentos/supervisao-e-tipos-de-enrollment/
 
 Antes de configurar qualquer coisa no MDM, você precisa decidir **como** o dispositivo entra na gestão. Essa escolha define o que dá para impor, o que dá apenas para sugerir e quanto da vida pessoal do usuário você enxerga.
 
@@ -243,7 +239,7 @@ Esta lição fecha a trilha de fundamentos. O próximo passo é colocar a teoria
 
 # Smart Groups e Extension Attributes no Jamf Pro: o par que organiza a frota
 
-URL: https://learn.deividsantos.com.br/jamf-pro/smart-groups-e-extension-attributes/
+URL: https://blog.deividsantos.com.br/jamf-pro/smart-groups-e-extension-attributes/
 
 No Jamf Pro, quase toda decisão de "quem recebe o quê" passa por um grupo. **Smart Groups** reúnem dispositivos por critérios que se atualizam sozinhos. **Extension Attributes** (EAs) criam novos campos de inventário quando os campos nativos não bastam. Juntos, permitem responder perguntas como "quais Macs estão há mais de 14 dias sem reiniciar?" e agir sobre a resposta.
 
@@ -315,7 +311,7 @@ Quando esse ciclo funcionar, você já sabe usar o mecanismo que sustenta quase 
 
 # Scripts para o Jamf Pro que rodam em produção sem surpresas
 
-URL: https://learn.deividsantos.com.br/jamf-pro/scripts-para-producao/
+URL: https://blog.deividsantos.com.br/jamf-pro/scripts-para-producao/
 
 Um script que funciona no seu Mac pode falhar em mil outros: usuário diferente, disco cheio, rede lenta, macOS mais antigo. A diferença entre um script de laboratório e um script de produção está em um punhado de hábitos que cabem em um modelo reutilizável.
 
@@ -409,7 +405,7 @@ Próxima trilha: [IaC para dispositivos](/iac/iac-para-mdm-por-que-e-por-onde-co
 
 # Infraestrutura como código para MDM: por que e por onde começar
 
-URL: https://learn.deividsantos.com.br/iac/iac-para-mdm-por-que-e-por-onde-comecar/
+URL: https://blog.deividsantos.com.br/iac/iac-para-mdm-por-que-e-por-onde-comecar/
 
 A maioria dos MDMs nasce de cliques: alguém cria um perfil no console, outro ajusta uma policy, um terceiro apaga um grupo "que parecia não usado". Meses depois ninguém sabe quem mudou o quê, o ambiente de testes não se parece com o de produção e a pessoa que entendia o desenho saiu da empresa.
 
@@ -474,7 +470,7 @@ Crie um repositório privado com as pastas `perfis/`, `scripts/` e `extension-at
 
 # Pipeline de validação com GitHub Actions para perfis e scripts de MDM
 
-URL: https://learn.deividsantos.com.br/iac/pipeline-de-validacao-com-github-actions/
+URL: https://blog.deividsantos.com.br/iac/pipeline-de-validacao-com-github-actions/
 
 Um pipeline de validação pega erros bobos antes que cheguem à frota: um `.mobileconfig` com XML quebrado, um script com variável mal escrita. É a etapa 2 do caminho descrito em [IaC para MDM](/iac/iac-para-mdm-por-que-e-por-onde-comecar/) e custa poucos minutos para montar.
 
@@ -592,7 +588,7 @@ Esta lição fecha a trilha de IaC por enquanto. Veja o que vem a seguir no [roa
 
 # O que é DEX (Digital Employee Experience) e como medir em frotas Apple
 
-URL: https://learn.deividsantos.com.br/dex/o-que-e-dex-e-como-medir/
+URL: https://blog.deividsantos.com.br/dex/o-que-e-dex-e-como-medir/
 
 **DEX** (Digital Employee Experience) é a qualidade da experiência de quem usa a tecnologia da empresa para trabalhar. Não é um produto: é uma forma de olhar para a TI pela perspectiva do colaborador. A pergunta muda de "o Mac está em conformidade?" para "o Mac está atrapalhando o trabalho de alguém?".
 
@@ -647,7 +643,7 @@ Escreva, em uma página, os três indicadores que você escolheria para a sua fr
 
 # Sinais de DEX no Mac com Extension Attributes: disco, reinício e bateria
 
-URL: https://learn.deividsantos.com.br/dex/sinais-de-dex-com-extension-attributes/
+URL: https://blog.deividsantos.com.br/dex/sinais-de-dex-com-extension-attributes/
 
 Na lição anterior você escolheu os indicadores. Aqui estão três sinais de baixo custo e baixo risco de privacidade, cada um como um Extension Attribute que você pode colar no Jamf Pro. Eles não leem arquivos de usuário, histórico nem conteúdo: só estado do equipamento.
 
@@ -733,7 +729,7 @@ Quer ir além? O [mapa do Modern Workplace](/modern-workplace/mapa-do-modern-wor
 
 # Mapa do Modern Workplace Apple: identidade, gestão, segurança e experiência
 
-URL: https://learn.deividsantos.com.br/modern-workplace/mapa-do-modern-workplace-apple/
+URL: https://blog.deividsantos.com.br/modern-workplace/mapa-do-modern-workplace-apple/
 
 "Modern Workplace" é o nome que a indústria deu à forma atual de entregar tecnologia ao colaborador: o trabalho acontece em qualquer lugar, em dispositivos que a empresa gerencia sem ficar dentro do prédio. Para uma frota Apple, isso significa várias peças trabalhando juntas. Quando uma falha, o usuário sente em todas.
 
@@ -780,7 +776,7 @@ Desenhe as cinco camadas em uma folha e, para cada uma, escreva em uma linha qua
 
 # Platform SSO no macOS: visão geral, requisitos e como planejar o piloto
 
-URL: https://learn.deividsantos.com.br/modern-workplace/platform-sso-visao-geral/
+URL: https://blog.deividsantos.com.br/modern-workplace/platform-sso-visao-geral/
 
 Em um Mac corporativo comum, o colaborador tem duas identidades: a conta local do Mac, com sua própria senha, e a conta corporativa, no provedor de identidade (IdP). Trocar uma senha em um lado e esquecer o outro gera chamado. O **Platform SSO** liga as duas: a conta local do Mac passa a se apoiar na identidade do IdP, e o login único chega aos aplicativos sem pedir credenciais de novo.
 
