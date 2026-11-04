@@ -279,3 +279,29 @@ footer .meta a {
   object-fit: cover;
   object-position: top;
 }
+
+/* Home em duas colunas: posts à esquerda, apresentação e temas à direita */
+.home-colunas {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: 0 3.5rem;
+  align-items: start;
+}
+.home-colunas > div > :first-child,
+.home-colunas > div > :first-child h2 {
+  margin-top: 0;
+}
+.home-colunas > div:last-child {
+  padding-top: 0.2rem;
+}
+.home-colunas > div:last-child h2 {
+  font-size: var(--sl-text-xl);
+}
+.home-colunas > div:last-child .trilhas a {
+  font-size: 1.05rem;
+}
+@media (max-width: 56rem) {
+  .home-colunas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
