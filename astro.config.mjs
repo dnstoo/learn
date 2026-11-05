@@ -65,7 +65,7 @@ export default defineConfig({
       lastUpdated: true,
       routeMiddleware: './src/routeData.ts',
       customCss: ['./src/styles/custom.css'],
-      components: { PageTitle: './src/components/PageTitle.astro', Header: './src/components/Header.astro' },
+      components: { PageTitle: './src/components/PageTitle.astro', Header: './src/components/Header.astro', Sidebar: './src/components/Sidebar.astro' },
       social: GITHUB_USER
         ? [{ icon: 'github', label: 'GitHub', href: `https://github.com/${GITHUB_USER}/${GITHUB_REPO}` }]
         : [],

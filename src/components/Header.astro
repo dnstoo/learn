@@ -1,15 +1,11 @@
 ---
-import Search from '@astrojs/starlight/components/Search.astro';
 
 // Mesma barra do site principal: marca, links de seção, tema e LinkedIn.
 const SITE = 'https://deividsantos.com.br';
 const links = [
-  { texto: 'Na prática', href: `${SITE}/#pratica` },
-  { texto: 'Trajetória', href: `${SITE}/#trajetoria` },
-  { texto: 'Comunidade', href: `${SITE}/#comunidade` },
+  { texto: 'Posts', href: '/#posts-recentes' },
+  { texto: 'Série', href: '/curso-mdm-como-codigo/' },
   { texto: 'Sobre', href: `${SITE}/#sobre` },
-  { texto: 'Blog', href: '/' },
-  { texto: 'Contato', href: `${SITE}/#contato` },
 ];
 ---
 
@@ -23,7 +19,6 @@ const links = [
     {links.map((l) => <li><a href={l.href}>{l.texto}</a></li>)}
   </ul>
   <div class="acoes sl-flex print:hidden">
-    <Search />
     <details class="menu-movel md:sl-hidden">
       <summary aria-label="Abrir menu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>

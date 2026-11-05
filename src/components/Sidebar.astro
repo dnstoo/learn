@@ -1,0 +1,7 @@
+---
+import Default from '@astrojs/starlight/components/Sidebar.astro';
+import Search from '@astrojs/starlight/components/Search.astro';
+---
+
+<div class="busca-destaque"><Search /></div>
+<Default {...Astro.props}><slot /></Default>

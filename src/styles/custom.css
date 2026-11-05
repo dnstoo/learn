@@ -347,3 +347,50 @@ footer .meta a {
 .sl-markdown-content p {
   max-width: 38rem;
 }
+
+/* Busca em destaque: topo da lateral e abaixo do hero da home */
+.busca-destaque button[data-open-modal] {
+  width: 100%;
+  min-height: 3rem;
+  padding-inline: 1rem;
+  border: 2px solid var(--sl-color-gray-4);
+  border-radius: 0;
+  background: var(--sl-color-gray-6);
+  color: var(--sl-color-white);
+  font-size: var(--sl-text-base);
+}
+.busca-destaque button[data-open-modal]:hover {
+  border-color: var(--amarelo);
+}
+.busca-destaque {
+  margin-bottom: 1.25rem;
+}
+.busca-home {
+  max-width: 38rem;
+  margin: 1.5rem 0 0;
+}
+.busca-destaque button[data-open-modal] > kbd {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  margin-inline-start: auto;
+}
+.busca-destaque button[data-open-modal] > kbd kbd {
+  display: inline;
+}
+.busca-home {
+  margin-block: 1.5rem 2rem;
+}
+.busca-destaque button[data-open-modal] > kbd {
+  flex-direction: row;
+  align-items: center;
+  line-height: 1;
+}
+.busca-destaque button[data-open-modal] > kbd kbd {
+  display: block;
+  line-height: 1;
+  vertical-align: baseline;
+}
+/* Dica do atalho some na busca em destaque (o atalho continua valendo) */
+.busca-destaque button[data-open-modal] > kbd {
+  display: none !important;
+}
