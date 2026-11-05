@@ -80,7 +80,25 @@ html {
   --sl-color-bg-nav: var(--sl-color-black);
 }
 
+/* Seletor de tema com contorno de 2px, como o botão de tema do site */
+starlight-theme-select select {
+  min-height: 2.75rem;
+  border: 2px solid var(--sl-color-gray-5);
+  border-radius: 0;
+}
+
 /* ───────── Tipografia ───────── */
+.sl-markdown-content p,
+.sl-markdown-content li,
+[data-has-hero] .hero .tagline {
+  text-wrap: pretty;
+}
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+[data-has-hero] .hero h1 {
+  text-wrap: balance;
+}
 h1,
 h2,
 h3,
@@ -136,7 +154,7 @@ h4 {
 [data-has-hero] .hero h1 {
   font-size: clamp(2.6rem, 8vw, 4.6rem);
   line-height: 1.02;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.04em;
   font-weight: 500;
 }
 [data-has-hero] .hero .tagline {
@@ -294,11 +312,13 @@ footer .meta a {
 .home-colunas > div > :first-child h2 {
   margin-top: 0;
 }
-.home-colunas > div:last-child {
-  padding-top: 0.2rem;
-}
 .home-colunas > div:last-child h2 {
   font-size: var(--sl-text-xl);
+}
+.home-colunas > div > :first-child h2,
+.home-colunas > div:last-child > :first-child h2 {
+  font-size: var(--sl-text-2xl);
+  line-height: 1.2;
 }
 .home-colunas > div:last-child .trilhas a {
   font-size: 1.05rem;
@@ -307,4 +327,18 @@ footer .meta a {
   .home-colunas {
     grid-template-columns: minmax(0, 1fr);
   }
+  /* Celular: retrato menor para o título aparecer na primeira tela */
+  .retrato-blog {
+    width: 9rem;
+    border-width: 4px;
+  }
+  [data-has-hero] .hero .hero-html {
+    justify-self: start;
+    justify-content: flex-start;
+  }
+}
+
+/* Parágrafos soltos da home (Autoria e independência) com medida de leitura */
+.sl-markdown-content p {
+  max-width: 38rem;
 }
