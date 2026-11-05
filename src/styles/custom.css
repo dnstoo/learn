@@ -80,6 +80,11 @@ html {
   --sl-color-bg-nav: var(--sl-color-black);
 }
 
+/* Altura da barra igual à do site (botões de 2.75rem + respiro) */
+:root {
+  --sl-nav-height: 4.75rem;
+}
+
 /* Seletor de tema com contorno de 2px, como o botão de tema do site */
 starlight-theme-select select {
   min-height: 2.75rem;

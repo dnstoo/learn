@@ -1,20 +1,23 @@
 ---
 import Search from '@astrojs/starlight/components/Search.astro';
-import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro';
 
-// Mesma barra do site principal: marca, links de seção, ação de LinkedIn.
+// Mesma barra do site principal: marca, links de seção, tema e LinkedIn.
+const SITE = 'https://deividsantos.com.br';
 const links = [
-  { texto: 'Posts', href: '/#posts-recentes' },
-  { texto: 'Série', href: '/curso-mdm-como-codigo/' },
-  { texto: 'Sobre', href: 'https://deividsantos.com.br/#sobre' },
-  { texto: 'Site', href: 'https://deividsantos.com.br' },
+  { texto: 'Na prática', href: `${SITE}/#pratica` },
+  { texto: 'Trajetória', href: `${SITE}/#trajetoria` },
+  { texto: 'Comunidade', href: `${SITE}/#comunidade` },
+  { texto: 'Sobre', href: `${SITE}/#sobre` },
+  { texto: 'Blog', href: '/' },
+  { texto: 'Contato', href: `${SITE}/#contato` },
 ];
 ---
 
 <div class="barra">
   <a class="marca" href="/" aria-label="Blog de Deívid Santos, início">
     <img src="/favicon.png" width="40" height="40" alt="" />
-    <span>Blog</span>
+    <span class="marca-nome">Deívid Santos</span>
+    <span class="marca-cargo">Blog</span>
   </a>
   <ul class="sl-hidden md:sl-flex print:hidden">
     {links.map((l) => <li><a href={l.href}>{l.texto}</a></li>)}
@@ -30,12 +33,24 @@ const links = [
         <li><a href="https://www.linkedin.com/in/dnsto">LinkedIn</a></li>
       </ul>
     </details>
-    <div class="sl-hidden md:sl-flex acoes-extra">
-      <ThemeSelect />
-      <a class="botao-linkedin" href="https://www.linkedin.com/in/dnsto">LinkedIn</a>
-    </div>
+    <button class="tema" type="button" aria-label="Alternar entre tema claro e escuro">
+      <svg class="i-lua" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+      <svg class="i-sol" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+    </button>
+    <a class="botao-linkedin sl-hidden md:sl-flex" href="https://www.linkedin.com/in/dnsto">LinkedIn</a>
   </div>
 </div>
+
+<script>
+  // Mesmo mecanismo do seletor do Starlight: data-theme + chave starlight-theme.
+  document.querySelector('.barra .tema')?.addEventListener('click', () => {
+    const proximo = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = proximo;
+    try {
+      localStorage.setItem('starlight-theme', proximo);
+    } catch {}
+  });
+</script>
 
 <style>
   @layer starlight.core {
@@ -51,11 +66,9 @@ const links = [
     .marca {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.85rem;
       text-decoration: none;
       color: var(--sl-color-white);
-      font-weight: 600;
-      font-size: 1.1rem;
       min-height: 2.75rem;
     }
     /* Mesmo grid do site: marca à esquerda, links realmente centralizados, ações à direita */
@@ -126,6 +139,48 @@ const links = [
     .acoes-extra {
       gap: 0.75rem;
       align-items: center;
+    }
+    .tema {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      background: transparent;
+      color: var(--sl-color-white);
+      border: 2px solid var(--sl-color-gray-5);
+      cursor: pointer;
+    }
+    .tema:hover {
+      background: var(--sl-color-gray-6);
+    }
+    .tema .i-sol,
+    :global(:root[data-theme='dark']) .tema .i-lua {
+      display: none;
+    }
+    :global(:root[data-theme='dark']) .tema .i-sol {
+      display: block;
+    }
+    .marca-nome {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+    .marca-cargo {
+      font-family: var(--sl-font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sl-color-gray-3);
+    }
+    @media (max-width: 95rem) {
+      .marca-cargo {
+        display: none;
+      }
+    }
+    @media (max-width: 32rem) {
+      .marca-nome {
+        display: none;
+      }
     }
     .botao-linkedin {
       display: inline-flex;
