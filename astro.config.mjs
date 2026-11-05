@@ -6,8 +6,7 @@ import { existsSync } from 'node:fs';
 // ───────── Ajuste estes valores quando criar o repositório ─────────
 const SITE = 'https://blog.deividsantos.com.br';
 const SITE_PESSOAL = 'https://deividsantos.com.br';
-const GITHUB_USER = 'dnstoo'; // ex.: 'deividsantos'. Vazio = sem link do GitHub e sem "Editar página".
-const GITHUB_REPO = 'learn';
+const GITHUB_USER = 'dnstoo'; // Só alimenta o sameAs do JSON-LD; o site não linka o repositório.
 // ────────────────────────────────────────────────────────────────
 
 // O curso só entra no menu se a pasta existir neste checkout: slug inexistente no sidebar derruba o build.
@@ -66,12 +65,6 @@ export default defineConfig({
       routeMiddleware: './src/routeData.ts',
       customCss: ['./src/styles/custom.css'],
       components: { PageTitle: './src/components/PageTitle.astro', Header: './src/components/Header.astro', Sidebar: './src/components/Sidebar.astro' },
-      social: GITHUB_USER
-        ? [{ icon: 'github', label: 'GitHub', href: `https://github.com/${GITHUB_USER}/${GITHUB_REPO}` }]
-        : [],
-      ...(GITHUB_USER
-        ? { editLink: { baseUrl: `https://github.com/${GITHUB_USER}/${GITHUB_REPO}/edit/main/` } }
-        : {}),
       head: [
         { tag: 'meta', attrs: { name: 'author', content: 'Deívid Santos' } },
         { tag: 'meta', attrs: { property: 'og:locale', content: 'pt_BR' } },
